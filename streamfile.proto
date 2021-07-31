@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package streamfile;
+
+
+service FileService {
+    rpc download (voidNoParam) returns (stream FileStream) {}
+}
+
+
+message voidNoParam {}
+
+message FileStream {
+    bytes message = 1;
+}
